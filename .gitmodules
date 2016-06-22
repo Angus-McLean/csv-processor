@@ -1,0 +1,3 @@
+[submodule "lib/formula.js"]
+	path = lib/formula.js
+	url = https://github.com/sutoiku/formula.js
