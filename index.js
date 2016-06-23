@@ -17,7 +17,7 @@ var path = require('path'),
 
 GLOBAL.async = async;
 GLOBAL.lib = {
-	//excel : require(path.resolve('loader.js'))('lib/formula.js/lib/*.js'),
+	excel : require(path.resolve('loader.js'))('lib/formula.js/lib/*.js'),
 	utils : require(path.resolve('loader.js'))('lib/utils/*.js')
 };
 

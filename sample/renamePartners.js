@@ -9,20 +9,20 @@ module.exports = function (row, ind, arr, cb) {
 		{text: 'Agent',        abbreviation: 'AGE',    sortOrder: '3' },
 		{text: 'Partner',      abbreviation: 'PAR',    sortOrder: '4' },
 		{text: 'Affiliate',    abbreviation: 'AFF',    sortOrder: '5' },
-		{text: 'Sub-Agent',    abbreviation: 'SUB',    sortOrder: '6' }
+		{text: 'Sub-Agent',    abbreviation: 'SUB',    sortOrder: '6' },
+		{text: 'ExSalesRep',   abbreviation: 'EXS',    sortOrder: '7' }
 	];
 
 	sortOrder.forEach(function (obj) {
 		try{
 			var indCurSortItem = row['Proposed Partner Type'].indexOf(obj.text);
 		} catch (e) {
-			//console.error('failed on group :',JSON.stringify(row), e);
+			console.error('failed on group :',JSON.stringify(row), e);
 			process.exit();
 		}
 
 		if(indCurSortItem > -1) {
 			groupName += obj.abbreviation + '-' + (row['Proposed Partner Name'][indCurSortItem].replace(/ /g, '').slice(0, 10)) + '/';
-			//console.log(row['Proposed Partner Name'][indCurSortItem]);
 		}
 	});
 

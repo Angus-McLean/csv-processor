@@ -2,3 +2,4 @@ node_modules/
 lib/formula.js/
 lib/formula.js
 sample/*.csv
+data/
