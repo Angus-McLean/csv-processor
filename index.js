@@ -18,7 +18,7 @@ var path = require('path'),
 GLOBAL.async = async;
 GLOBAL.lib = {
 	excel : require(path.resolve('loader.js'))('lib/formula.js/lib/*.js'),
-	utils : require(path.resolve('loader.js'))('lib/utils/*.js')
+	ops : require(path.resolve('loader.js'))('lib/ops/*.js')
 };
 
 function parseInputParameters (argv) {
@@ -33,7 +33,7 @@ function parseInputParameters (argv) {
 
 function runProcessStep (initiatorObj, csvJsonObj, callback) {
 	var boundFnsArr = [];
-
+	console.log('Starting Step : ' + JSON.stringify(initiatorObj));
 	if(initiatorObj.once) {
 		initiatorObj.function.call(csvJsonObj, null, -1, csvJsonObj, callback);
 		return;
